@@ -1,0 +1,17 @@
+<div id="container-messages"class="container" >
+    <div class="row">
+        <div class="col-lg-4">
+            <h3 class="h3-strong">{{title}}</h3>
+            <div class="list-group">
+                <a [routerLink]="['enviar']" class="list-group-item list-group-item-action" [routerLinkActive]="['active']">Enviar Mensaje</a>
+                <a [routerLink]="['recibidos']" class="list-group-item list-group-item-action" [routerLinkActive]="['active']">Mensaje recibidos</a>
+                <a [routerLink]="['enviados']" class="list-group-item list-group-item-action" [routerLinkActive]="['active']">Mensaje enviados</a>
+               <!--<a [routerLink]="['/home']" class="list-group-item list-group-item-action" [routerLinkActive]="['active']">Informacion</a>-->
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <!--componentes/router outlet-->
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

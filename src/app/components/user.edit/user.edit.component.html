@@ -1,0 +1,41 @@
+<div class="col-lg-5">
+    <div class="col-lg-5">
+        <h1 class="h1-strong">{{title}}</h1>
+        <div class="alert alert-success" *ngIf="status == 'success'">
+            Update profile completed successfully, <a [routerLink]="['/login']">Sign in here</a>
+        </div>
+        <div class="alert alert-danger" *ngIf="status == 'error'">
+            Update could not be completed, try again
+        </div>
+    </div>
+    <form #registerForm="ngForm" (ngSubmit)="onSubmit()" class="col-lg-12">
+        <p>
+            <label>Name</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" required />
+            <span *ngIf="!name.valid && name.touched" color="red">Name Required!!</span>
+        </p>
+        <p>
+            <label>Surname</label>
+            <input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" class="form-control" required />
+            <span *ngIf="!surname.valid && surname.touched">Surname Required!!</span>
+        </p>
+        <p>
+            <label>Nick</label>
+            <input type="text" name="nick" #nick="ngModel" [(ngModel)]="user.nick" class="form-control" required />
+            <span *ngIf="!nick.valid && nick.touched">Nick Required!!</span>
+        </p>
+        <p>
+            <label>Email</label>
+            <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+            <span *ngIf="!email.valid && email.touched">Email Required!!</span>
+        </p>
+        <div *ngIf="user.image">
+            <img src="{{url + 'get/user/image/' + user.image}}" />
+        </div>
+        <p> 
+            <label for="">Image Profile</label>
+            <input type="file" placeholder="upload Image" (change)="fileChangeEvent($event)"/>
+        </p>
+        <input type="submit" value={{title}} class="btn btn-warning"[disabled]="!registerForm.form.valid">
+    </form>
+</div>

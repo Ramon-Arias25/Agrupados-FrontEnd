@@ -1,0 +1,83 @@
+<div id="user-card" class="panel panel-default">
+    <div class="avatar">
+        <img id="img" src="{{ url + 'get/user/image/' + identity.image }}" *ngIf="identity.image" />
+        <img id="img" src="assets/user.webp" *ngIf="!identity.image" />
+    </div>
+    <div>
+        <div class="name-surname">
+            <a [routerLink]="['/profile',identity._id]" class="aprofile">
+                <h1  class="h1-strong">{{identity.nick}}</h1>
+            </a>
+            <a [routerLink]="['/profile',identity._id]" class="username">
+                {{identity.name + ' ' + identity.surname}}
+            </a>
+            <!--<p class="nickname">{{identity.nick}}</p>-->
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="stats" *ngIf="stats">
+            <div class="row">
+                <div class="col-lg-4 stats">
+                    <div class="following-data">
+                        <a [routerLink]="['/following', identity._id,1]">
+                            <span class="label-stats">
+                                Siguiendo
+                            </span>
+                            <span class="number-stats">
+                                {{ stats.following }}
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 stats">
+                    <div class="following-data">
+                        <a [routerLink]="['/follower', identity._id,1]">
+                            <span class="label-stats">
+                                Seguidores
+                            </span>
+                            <span class="number-stats">
+                                {{ stats.followed }}
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 stats">
+                    <div class="following-data">
+                        <a href="#">
+                            <span class="label-stats">
+                                Publicaciones
+                            </span>
+                            <span class="number-stats">
+                                {{ stats.publication }}
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- formulario de publicaciones-->
+
+<div id="new-publication" >
+    <div class="alert alert-success" *ngIf="status == 'success'">
+        Publicacion enviada correctamente
+    </div>
+    <div class="alert alert-danger" *ngIf="status == 'error'">
+        Publicacion NO enviada correctamente
+    </div> 
+    <form #newPubForm="ngForm" (ngSubmit)="onSubmit(newPubForm, $event);" class="col-lg-10">
+        <p>
+            <label>Que estas pensando?</label>
+            <textarea name="text" #text="ngModel" [(ngModel)]="publication.text" class="form-control" required></textarea>
+            <span *ngIf="!text.valid && text.touched">
+                el Texto de la publicacion es obligatorio
+            </span>
+        </p>
+        <p>
+            <input type="file" placeholder="Subir imagen" (change)="fileChangeEvent($event)"/>
+        </p>
+        <input type="submit" value="Enviar" class="btn btn-success" [disabled]="!newPubForm.form.valid" />
+    </form>
+</div>

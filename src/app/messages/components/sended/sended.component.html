@@ -1,0 +1,43 @@
+<div class="col-lg-8">
+    <h3 class="h3-strong">{{title}}</h3>
+    <!--formulario de mensajes recibidos-->
+    <div *ngFor="let message of messages" class="item-publication" >
+        <div class="panel-body" *ngIf="message && message.receiver">                        
+            <div class="row">
+                    <div class="image-user-publication">
+                        <a href="#">
+                            <img class= "imgUsrPub" src="{{ url + 'get/user/image/' + message.receiver.image }}" *ngIf="message.receiver.image">
+                            <img class= "imgUsrPub" src="assets/user.webp" *ngIf="!message.receiver.image">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <b><p>{{message.receiver.nick }} &nbsp; </p></b>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <span> {{message.receiver.name + ' ' + message.receiver.surname}}</span>
+                        </a>
+                    </div>
+            </div>
+            <div class="sub-item-publication">
+                <div class="publication-text">
+                    <span>{{message.text }}</span>
+                </div>
+            </div>
+            <div class="date footerpub">
+                {{ ( message.create_at | amFromUnix) | amLocale:'es' | amTimeAgo }}
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        &nbsp;
+    </div>
+    <div class="pagination">
+        <ul class="pagination">
+            <li class="page-item" ><a class="page-link"[routerLink]="['/mensajes/enviados/', prevPage]">Previous</a></li>
+            <li class="page-item" ><a class="page-link"[routerLink]="['/mensajes/enviados/', nextPage]">Next</a></li>
+        </ul>
+    </div>
+</div> 

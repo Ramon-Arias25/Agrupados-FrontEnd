@@ -1,0 +1,70 @@
+<div id="container-body" class="container" >
+    <div class="row">
+        <div class="col-lg-4">
+            <sidebar></sidebar>
+        </div>
+        <div class="col-lg-8 people-body">
+            <h1 class="h1-strong" *ngIf="user">{{title}} for {{user.nick}}</h1>
+            
+            <div class="people">
+                <div *ngFor="let follow of follows" class="item-user">
+                    <div class="panel panel-default" >
+                        <div class="panel-body row">
+                            <div class="image-user">
+                                <a [routerLink]="['/profile',follow.followed._id]">
+                                    <img src="{{url + 'get/user/image/' + follow.followed.image }}" *ngIf="follow.followed.image">
+                                    <img src="assets/user.webp" *ngIf="!follow.followed.image">
+                                </a>
+                            </div>
+                            <div class="row User-name">
+                                <p class="nickname">
+                                    <a [routerLink]="['/profile',follow.followed._id]">
+                                        &nbsp; {{follow.followed.nick}} &nbsp;
+                                    </a>
+                                </p>
+                                <p class="name-surname">
+                                    {{follow.followed.name + ' ' + follow.followed.surname}}
+                                </p>
+                            </div>
+             
+                            
+                           <div class="btn-fw ml-auto" *ngIf="follow.followed._id != identity._id">
+                                
+                                <button class="btn btn-success" *ngIf=" following.indexOf(follow.followed._id) < 0" 
+                                (click)="followUser(follow.followed._id)">
+                                   <span class="fas fa-plus"></span> Follow
+                                </button>
+                                
+                                <button class="btn btn-primary" 
+                                    *ngIf="following.indexOf(follow.followed._id) >= 0"
+                                    (mouseenter)="mouseEnter(follow.followed._id)"
+                                    (mouseleave)="mouseLeave(follow.followed._id)"
+                                    [class.btn-danger]="follow.followed._id == followUserOver"
+                                    (click)="unFolloUser(follow.followed._id)"
+                                    >
+                                    
+                                    <span *ngIf="follow.followed._id == followUserOver; else followed">
+                                        <span class="fas fa-minus-circle"></span> 
+                                        UnFollow
+                                    </span>
+                                    <ng-template #followed>
+                                        <span class="fas fa-check"></span> Followed
+                                    </ng-template>
+                                 </button> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             
+                <div class="pagination" >  
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link"[routerLink]="['/following',userIdUrl, prevPage]">Previous</a></li>
+                        <li *ngIf="page"class="page-item"><a class="page-link"[routerLink]="['/following',userIdUrl, page ]">{{page}} / {{pages}}</a></li>
+                        <li *ngIf="!page"class="page-item"><a class="page-link"[routerLink]="['/following',userIdUrl, 1 ]">1 / {{pages}}</a></li>
+                        <li class="page-item"><a class="page-link"[routerLink]="['/following/',userIdUrl, nextPage]">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

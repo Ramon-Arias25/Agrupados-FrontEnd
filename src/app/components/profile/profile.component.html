@@ -1,0 +1,117 @@
+<section class="cover-sec">
+    <img src="http://via.placeholder.com/1600x400" alt="">
+</section> 
+
+<div id="profile" class="container" >
+    <div class="row">
+        <!--<div class="col-lg-4">
+            <sidebar></sidebar>
+        </div>-->
+        <div class="col-lg-6 profile-body">
+            <div class="user-tab-sec" *ngIf="user" >
+                <div class="avatar" *ngIf="user" >
+                    <img id="img" src="{{ url + 'get/user/image/' + user.image }}" *ngIf="user.image" />
+                    <img id="img" src="assets/user.webp" *ngIf="!user.image" />
+                </div>
+                <div class="user-tab-info">
+                    <div class="row">
+                        <h3>{{user.nick}}</h3>
+                        <div class="follow">
+                            <span class="badge badge-secondary ml-auto" *ngIf="following">Te sigue</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col star-descp">
+                            <span>{{user.name + '  ' + user.surname}}</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-success" *ngIf="!followers" (click)="followUser(user._id)"> 
+                                Seguir
+                            </button>
+                            <button class="btn btn-primary btnfw" 
+                            *ngIf="followers" 
+                            (click)="unFollowUser(user._id)"
+                            (mouseenter)="mouseEnter(user._id)"
+                            (mouseleave)="mouseLeave()"
+                            [class.btn-danger]="user._id == followUserOver"
+                            >
+                                <span *ngIf="user._id == followUserOver else followingplantilla">
+                                    Dejar de seguir
+                                </span>
+                                <ng-template #followingplantilla>
+                                    Siguiendo
+                                </ng-template>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats" *ngIf="stats">
+                    <div class="row">
+                        <div class="col-lg-4 stats">
+                            <div class="following-data">
+                                <a [routerLink]="['/following', user._id, 1]">
+                                    <span class="label-stats">
+                                        Siguiendo
+                                    </span>
+                                    <span class="number-stats">
+                                        {{ stats.following }}
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 stats">
+                            <div class="following-data">
+                                <a [routerLink]="['/follower', user._id, 1]">
+                                    <span class="label-stats">
+                                        Seguidores
+                                    </span>
+                                    <span class="number-stats">
+                                        {{ stats.followed }}
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 stats">
+                            <div class="following-data">
+                                <a href="#">
+                                    <span class="label-stats">
+                                        Publicaciones
+                                    </span>
+                                    <span class="number-stats">
+                                        {{ stats.publication }}
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12" *ngIf="user">
+                    <publications [userId]="user._id" ></publications>
+                </div>
+                <!--star-descp end-->
+                <!--<div class="tab-feed">
+                    <ul>
+                    <li data-tab="feed-dd" class="active">
+                        <a href="#" title="">
+                        <img src="assets/ic1.png" alt="">
+                        <span>Feed</span>
+                        </a>
+                    </li>
+                    <li data-tab="info-dd">
+                        <a href="#" title="">
+                        <img src="assets/ic2.png" alt="">
+                        <span>Info</span>
+                        </a>
+                    </li>
+                    <li data-tab="portfolio-dd">
+                        <a href="#" title="">
+                        <img src="assets/ic3.png" alt="">
+                        <span>Portfolio</span>
+                        </a>
+                    </li>
+                    </ul>
+                </div>--><!-- tab-feed end-->
+            </div><!--user-tab-sec end-->
+        </div>
+    </div>
+</div>

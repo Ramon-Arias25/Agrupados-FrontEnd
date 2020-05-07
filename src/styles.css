@@ -1,0 +1,475 @@
+/* You can add global styles to this file, and also import other style files */
+/*body{
+    /*background: linear-gradient(to left, #52ace7, #6dd5fa);*/
+    /*background: linear-gradient(to right, #f46b45, #eea849); naranja?*/
+/*}*/
+a{
+    text-decoration: none !important;
+}
+.h1-strong, .aprofile .h1-strong {
+    font-size: 35px !important; 
+    font-weight:bold !important;
+    margin-left: 0px !important;
+    margin: 20 !important;
+    padding: 15px !important;
+    border-bottom: 1px solid #eee !important;
+    color: #000000 !important;
+}
+.navigation{
+    padding: 0px !important;
+}
+
+.navbar{
+    border-radius: 0px !important;
+    background: #e53c37 !important;
+    border:none;
+    vertical-align: middle;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+.nav-link{
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.nav-link.active{
+    background: #cc1717 !important;
+}
+.navbar *{
+    color: #FFFFFF !important;
+}
+.dropdown-menu *{
+    color: #cc1717 !important;
+    margin-right: 2px;
+    vertical-align: auto;
+}
+.nav .avatar{
+    width: 35px;
+    height: 35px;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-top: 0px;
+    margin-right: 10px;
+}
+.nav .avatar .img{
+    width: 100%
+}
+
+.navigation .navbar .nav>.open>a,.navigation .navbar .nav>.open>a:focus{
+    background: #cc1717 !important;
+}
+.navbar-expand .navbar-nav {
+    flex-direction: row;
+    align-items: center;
+}
+
+.panel-body .image-user{
+    border: 2px;
+    width: 75px;
+    height: 75px;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-right: 15px;
+    margin-top: 0px;
+    margin-left: 15px;
+    border-style: double;
+    border-color: #bdbdbd;
+}
+
+/*gente*/
+#container-body{
+    width: 95% !important;
+}
+.panel-body .image-user a img{
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+}
+.panel-body .image-user{
+    vertical-align: middle;
+}
+
+.item-user{
+    border: solid;
+    border-radius: 50px;
+    border-color: #DEDEDE;
+    border-width: 1px;
+    margin-bottom: 2px;
+    padding: 5px;
+}
+.panel-body .User-name{
+    margin-top: 10px;
+}
+.panel-body .User-name .name-surname{
+    color:#969393;
+}
+.panel-body .User-name .nickname a{
+    color:#444;
+    font-weight: bold;
+}
+.panel-body p{
+    margin-top: 0;
+    margin-bottom: 0rem;
+    color: #000000;
+}
+.pagination{
+  margin-left: auto;
+  margin-right: auto;
+}
+.people-body, .publication-body{
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn-fw{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 50px;
+}
+
+/*sidebar*/
+#user-card .avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0px;
+    border-style: double;
+    border-color:#777676;
+    padding: 0px;
+}
+#img{
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#user-card{
+    padding: 15px;
+}
+#user-card .name-surname{
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#user-card .name-surname a{
+    color: #5f5f5f;
+}
+
+#user-card .label-stats,
+#user-card .number-stats{
+    display: block;
+    text-align: center;
+}
+#user-card .stats{
+    padding: 0px;
+}
+
+#user-card .label-stats{
+    font-weight: bold;
+    color: #727070;
+}
+
+#user-card .number-stats{
+    color: #7c7a7a;
+}
+
+#new-publication, #user-card {
+    border: 1px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #DEDEDE;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.panel-body .image-user-publication{
+    border: 2px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    overflow: hidden;
+    border-style: double;
+    border-color: #bdbdbd;
+    margin-right: 10px;
+    margin-left: 30px;
+}
+
+.panel-body .image-user-publication .imgUsrPub{
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.panel-body .btnmore{
+    margin-left: 10px ;
+    margin-right: 30px !important;
+    display: block;
+}
+.sub-item{
+    align-items: center;
+}
+.sub-item-img{
+    width: auto;
+    max-height: 400px;
+}
+.item-publication, .sub-item-publication, .footerpub{
+    border: solid;
+    border-radius: 25px;
+    border-color: #DEDEDE;
+    border-width: 1px;
+    margin: 0px;
+}
+
+.item-publication{
+    padding: 0px;
+    padding-top: 5px;
+    margin-top: 15px;
+    margin-bottom: 0 px;
+}
+
+.sub-item-publication{
+    border-radius: 0%;
+    padding: 5px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footerpub{
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+    padding: 0px;
+    padding-right: 15px;
+    text-align: right;
+    font-size: 80%;
+}
+
+#publications .image-user-publication p, span{
+    color: #494949;
+    font-size: 75%;
+}
+
+#btn-mas{
+    margin-top: 15px;
+}
+
+/*NUEVOS ESTILOS DEL TEMA wORKwISE para perfil del usuario*/
+#profile .avatar{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -100px;
+    border-style: double;
+    border-color:#777676;
+    padding: 0px;
+    background-color: #FFFFFF;
+}
+.cover-sec img {
+    width: 100%;
+}
+/*
+.user-tab-info .pinfo{
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}*/
+/*
+.user-tab-info{
+    text-align: center;
+}*/
+.user-tab-sec {
+	float: left;
+	width: 100%;
+	padding-top: 4px;
+}
+.user-tab-sec h3 {
+	color: #000000;
+	font-size: 40px;
+	font-weight: 400;
+	text-transform: capitalize;
+	margin-bottom: 7px;
+}
+.star-descp {
+	width: 100%;
+    /*margin-bottom: 50px;*/
+}
+.star-descp > a {
+	float: left;
+	color: #51a5fb;
+	font-size: 18px;
+	font-weight: 600;
+	margin-left: 20px;
+	text-decoration: underline;
+}
+.star-descp > a:hover {
+	color: #51a5fb;
+}
+.star-descp span, p {
+	/*float: left;*/
+	color: #686868;
+	font-size: 18px;
+	font-weight: 600;
+    margin-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.star-descp > ul {
+	float: left;
+}
+.star-descp ul li {
+	display: inline-block;
+}
+.star-descp ul li i {
+	color: #b7ce1f;
+	font-size: 16px;
+}
+.tab-feed {
+	float: left;
+	width: 100%;
+	margin-bottom: 47px;
+}
+.tab-feed ul {
+	float: left;
+	width: 100%;
+}
+.tab-feed ul li {
+	display: inline-block;
+	margin-right: 35px;
+	text-align: center;
+}
+.tab-feed.st2 ul li {
+	margin-right: 30px;
+}
+.tab-feed ul li:last-child {
+	margin-right: 0;
+}
+.tab-feed ul li.active img {
+	filter: grayscale(0);
+}
+.tab-feed ul li.active span {
+	color: #e44d3a;
+}
+.tab-feed ul li img {
+	float: none;
+	margin-bottom: 5px;
+	filter: grayscale(100%);
+}
+.tab-feed ul li span {
+	display: block;
+	color: #b2b2b2;
+	font-weight: 400;
+	font-size: 18px;
+}
+.tab-feed ul li:last-child {
+	margin-right: 0;
+}
+.profile-body{
+    margin-left: auto;
+    margin-right: auto;
+}
+.follow{
+    margin-top: auto;
+}
+#profile .btnfw{
+    color : #ffffff !important;
+}
+
+#publications .dropdown a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* The dropdown container */
+  #publications .dropdown {
+    float: left;
+    /*overflow: hidden;*/
+  }
+  
+  /* Dropdown button */
+  #publications .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+  
+  /* Add a red background color to navbar links on hover */
+  #publications a:hover, #publications .dropdown:hover .dropbtn {
+    /*background-color: red;*/
+    border-radius: 5px;
+  }
+  
+  /* Dropdown content (hidden by default) */
+  #publications .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 90px;
+    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  #publications .dropdown-content a {
+    float: none;
+    /*color: black;
+    padding: 12px 16px;*/
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  #publications .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu on hover */
+  #publications .dropdown:hover .dropdown-content {
+    display: block;
+  }
+ .list-group,.list-group-item {
+    border-radius: 50px !important;
+    vertical-align: middle;
+}
+.list-group-item.active {
+    z-index: 2;
+    color: #fff;
+    background-color: #e53c37;
+    border-color: #e53c37;
+}
+#container-messages{
+    width: 95% !important;
+    margin-top: 10px;
+}
+.h3-strong, .aprofile .h1-strong {
+    /*font-size: 35px !important; 
+    font-weight:bold !important;*/
+    margin-left: 0px !important;
+    margin: 20 !important;
+    padding: 15px !important;
+    border-bottom: 1px solid #eee !important;
+    color: #000000 !important;
+}
