@@ -1,3 +1,3 @@
 export var GLOBAL = {
-    url: 'https://agrupadosbackend.herokuapp.com/'
+    url: 'https://agrupadosbackend.herokuapp.com/api/'
 }
