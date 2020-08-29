@@ -1,4 +1,4 @@
-export class Publication{
+export class Publication{ 
     constructor(
         public _id: string,
         public text: string,

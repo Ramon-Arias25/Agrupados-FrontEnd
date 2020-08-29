@@ -14,7 +14,7 @@ const messagesRoutes: Routes =[
         path: 'mensajes',
         component: MainComponent,
         children:[
-            { path: '', redirectTo: 'recibidos', pathMatch: 'full'},
+            //{ path: '', redirectTo: 'recibidos', pathMatch: 'full'},
             { path: 'enviar', component:AddComponent, canActivate:[UserGuard]},
             { path: 'enviados', component: SendedComponent, canActivate:[UserGuard]},
             { path: 'recibidos', component: ReceivedComponent, canActivate:[UserGuard] },

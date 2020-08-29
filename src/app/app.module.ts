@@ -7,7 +7,6 @@ import { MomentModule } from 'angular2-moment';
 //import { MomentModule } from 'ngx-moment';
 //Modulo Custom
 import { MessageModule } from './messages/menssaje.module';
-
 //Componentes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +21,8 @@ import { PublicationsComponent } from './components/publications/publications.co
 import { ProfileComponent } from './components/profile/profile.component';
 import { FollowingComponent } from './components/following/following.component';
 import { FollowerComponent } from './components/follower/follower.component';
-
+import { PublisherComponent } from './components/publisher/publisher.component';
+import { PeopleComponent } from './components/people/people.component'
 //Servicios
 import { UserService } from './services/user.service';
 import { UserGuard } from './services/user.guard';
@@ -39,7 +39,9 @@ import { UserGuard } from './services/user.guard';
     PublicationsComponent,
     ProfileComponent,
     FollowingComponent,
-    FollowerComponent
+    FollowerComponent,
+    PublisherComponent,
+    PeopleComponent
   ],
   imports: [
     BrowserModule,

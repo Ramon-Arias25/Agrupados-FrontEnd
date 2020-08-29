@@ -1,0 +1,71 @@
+<div class="card" id="card-sidebar">
+    <div class="card-header bg-light">
+        <br>
+        <br>
+    </div>
+    <div class="card-body" id="card-body-sidebar">
+        <div class="card-body-user">
+            <div class="avatar-sidebar">
+                <a [routerLink]="['/profile',identity._id]">
+                    <img class="img-avatar" id= "img-avatar-sidebar" src="{{ url + 'get/user/image/' + identity.image }}" *ngIf="identity.image">
+                    <img class="img-avatar" id= "img-avatar-sidebar" src="assets/user.webp" *ngIf="!identity.image">
+                </a>
+            </div>
+            <div class="username">
+                <a [routerLink]="['/profile',identity._id]" class="h1-strong">
+                    <h1>{{identity.nick}}</h1>
+                </a>
+                <a [routerLink]="['/profile',identity._id]" class="fullname">
+                    <span>{{identity.name + ' ' + identity.surname}}</span>
+                </a>
+            </div>
+        </div>
+        <ul class="list-group list-group-flush list-follow">
+            <li class="list-group-item" > 
+                <a [routerLink]="['/following', identity._id,1]">
+                    <span class="label-stats">Following</span>
+                    <br>
+                    <span class="number-stats">{{ stats.following }}</span>
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a [routerLink]="['/follower', identity._id,1]">
+                    <span class="label-stats">Followers</span>
+                    <br>
+                    <span class="number-stats">{{ stats.followed }}</span>
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">
+                    <span class="label-stats">Publications</span>
+                    <br>
+                    <span class="number-stats">{{ stats.publication }}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- formulario de publicaciones-->
+<!--
+<div id="new-publication" >
+    <div class="alert alert-success" *ngIf="status == 'success'">
+        Publicacion enviada correctamente
+    </div>
+    <div class="alert alert-danger" *ngIf="status == 'error'">
+        Publicacion NO enviada correctamente
+    </div> 
+    <form #newPubForm="ngForm" (ngSubmit)="onSubmit(newPubForm, $event);" class="col-lg-10">
+        <p>
+            <label>Que estas pensando?</label>
+            <textarea name="text" #text="ngModel" [(ngModel)]="publication.text" class="form-control" required></textarea>
+            <span *ngIf="!text.valid && text.touched">
+                el Texto de la publicacion es obligatorio
+            </span>
+        </p>
+        <p>
+            <input type="file" placeholder="Subir imagen" (change)="fileChangeEvent($event)"/>
+        </p>
+        <input type="submit" value="Enviar" class="btn btn-success" [disabled]="!newPubForm.form.valid" />
+    </form>
+</div>-->

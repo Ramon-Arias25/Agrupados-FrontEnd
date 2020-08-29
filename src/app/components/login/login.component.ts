@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
-@Component({
+@Component({ 
     selector: 'login',
-    templateUrl: './login.component.html',
+    templateUrl: './login.v2.component.html',
     providers: [UserService]
 })
 export class LoginComponent implements OnInit{
@@ -84,8 +84,8 @@ export class LoginComponent implements OnInit{
         this.myUserServices.getCounters(this.identity._id).subscribe(
             response => {
                 localStorage.setItem('stats', JSON.stringify(response));
-                this.status = 'success'
-                this.myRouter.navigate(['/']);
+                this.status = 'success' 
+                this.myRouter.navigate(['/home']);
             },
             error => {
                 console.log(<any>error);

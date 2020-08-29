@@ -1,67 +1,54 @@
-<nav class="navbar navbar-expand">
-  <div class="navbar-header">
-    <a class="navbar-brand" href="#">{{title}}</a>
-  </div>
-  <div class="collapse navbar-collapse" >
-    <ul class="nav navbar-nav" *ngIf="identity">
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']"><span class="fa fa-home"></span> Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/timeline']" [routerLinkActive]="['active']"><span class="fa fa-th-list"></span> Timeline</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/people']" [routerLinkActive]="['active']"><span class="fa fa-users"></span> People</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/mensajes']" [routerLinkActive]="['active']"><span class="fas fa-inbox"></span> Menssages</a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav ml-auto" *ngIf="!identity">
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/login']" [routerLinkActive]="['active']"><i class="fa fa-user"></i> Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/register']" [routerLinkActive]="['active']"><span class="fa fa-user-plus"></span> Register</a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav ml-auto" *ngIf="identity">
-      <li class="avatar">
-        <!--cargar imagen del usuario-->
-        <img class="img w-35 h-auto"src="{{url + 'get/user/image/' + identity.image }}" *ngIf="identity && identity.image" />
-      </li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-          {{identity.name}} <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
-          <li>
-            <a [routerLink]="['/profile',identity._id]">
-              <span class="fa fa-user"></span>
-              Profile
-            </a>
-          </li>
-          <li>
-            <a  [routerLink]="['/edit-profile']">
-              <span class="fas fa-cogs"></span>
-               Edit Profile
-            </a>
-          </li>
-          <li>
-            <a class="pointer" (click)="logout()">
-              <span class="fas fa-sign-out-alt"></span>
-              LogOut
-            </a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <!-- Busqueda
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>-->
-  </div>
-</nav>
-
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav" *ngIf="identity">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']"><span class="fa fa-home"></span>
+            Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/timeline']" [routerLinkActive]="['active']"><span
+              class="fa fa-th-list"></span> Timeline</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/people']" [routerLinkActive]="['active']"><span
+              class="fa fa-users"></span> People</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav ml-auto" *ngIf="!identity">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/login']" [routerLinkActive]="['active']"><i class="fa fa-user"></i>
+            Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/register']" [routerLinkActive]="['active']"><span
+              class="fa fa-user-plus"></span> Register</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav ml-auto" *ngIf="identity">
+        <li class="nav-item d-md-down-none">
+          <a class="nav-link" href="#"><i class="icon-bell"></i><span class="badge badge-pill badge-danger"></span></a>
+        </li>
+        <li class="nav-item dropdown" dropdown placement="bottom right">
+          <a class="nav-link" data-toggle="dropdown" href="#" 
+          role="button" aria-haspopup="true" aria-expanded="false">
+            <div class="avatar-navbar">
+              <img id="avatar-nav-bar" src="{{url + 'get/user/image/' + identity.image }}" class="img-avatar" alt={{identity.name}} *ngIf="identity && identity.image"/>
+            </div>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <div class="dropdown-header text-center"><strong>Account</strong></div>
+            <a class="dropdown-item" [routerLink]="['/mensajes']"><i class="fa fa-envelope-o"></i> Messages<span
+                class="badge badge-success"></span></a>
+            <div class="dropdown-header text-center"><strong>Settings</strong></div>
+            <a class="dropdown-item" [routerLink]="['/profile',identity._id]"><i class="fa fa-user"></i> Profile</a>
+            <a class="dropdown-item" [routerLink]="['/edit-profile']"><i class="fa fa-wrench"></i> Setting</a>
+            <div class="divider"></div>
+            <a class="dropdown-item" (click)="logout()"><i class="fa fa-lock"></i> Logout</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
 <router-outlet></router-outlet>

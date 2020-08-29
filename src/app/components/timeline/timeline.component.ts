@@ -27,8 +27,8 @@ declare var $:any;
     public total;
     public pages;
     public itemsPerPage;
-    public publications: Publication[];
-
+    public publications: any;
+    
     constructor(
         private myRoute: ActivatedRoute,
         private myRouter: Router,
@@ -50,7 +50,7 @@ declare var $:any;
     getPublications(page, adding = false){
         this.myPublicationService.getPublication(this.token, page).subscribe(
             response => {
-                //console.log(response);
+
                 if(response.publications){
                     
                     this.total = response.total_items;
@@ -67,9 +67,6 @@ declare var $:any;
                         $('html,body').animate({scrollTop: $('body').prop('scrollHeight')}, 1000);
                     }
 
-                    if(page > this.pages){
-                        //this.myRouter.navigate(['/home']);
-                    }
                 }else{
                     this.status = 'error';
                 }
@@ -86,9 +83,6 @@ declare var $:any;
 
     public noMore = false;
     viewMore(){
-        //console.log(this.page);
-        //console.log(this.pages);
-        //if(this.publications.length == this.total){
         if(this.page  == this.pages){
             this.noMore = true;
         }else{

@@ -6,7 +6,6 @@ import { GLOBAL } from './services/global';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
   providers: [UserService]
 })
 export class AppComponent implements OnInit, DoCheck{
@@ -22,8 +21,6 @@ export class AppComponent implements OnInit, DoCheck{
   ){
     this.title = 'Pooled Demo';
     this.url = GLOBAL.url;
-
-
   }
 
   ngOnInit(){

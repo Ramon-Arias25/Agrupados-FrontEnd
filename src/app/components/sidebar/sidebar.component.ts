@@ -7,7 +7,7 @@ import { PublicationService } from '../../services/publication.service';
 import { UploadService } from '../../services/upload.service';
 @Component({
     selector: 'sidebar',
-    templateUrl: './sidebar.component.html',
+    templateUrl: './sidebar.v2.component.html',
     providers: [UserService, PublicationService, UploadService]
 })
 export class SidebarComponent implements OnInit{

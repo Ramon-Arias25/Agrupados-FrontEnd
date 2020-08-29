@@ -1,4 +1,4 @@
-<div class="col-lg-5">
+<div class="col-lg-5"> 
     <h1 class="h1-strong">{{title}}</h1>
     <div class="alert alert-success" *ngIf="status == 'success'">
         Has identified you correctly, Welcome
@@ -7,7 +7,7 @@
         Has not identified you correctly, Try again
     </div>
     <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="col-log-12">
-        <p>
+        <p> 
             <label>Email</label>
             <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
             <span *ngIf="!email.valid && email.touched">Email Required!!</span>

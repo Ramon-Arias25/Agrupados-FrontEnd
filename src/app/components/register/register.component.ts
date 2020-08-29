@@ -5,7 +5,7 @@ import { UserService } from '../../services/user.service';
  
 @Component({
     selector: "register",
-    templateUrl: './register.component.html',
+    templateUrl: './register.v2.component.html',
     providers: [UserService]
 })
 export class RegisterComponent implements OnInit{

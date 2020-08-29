@@ -1,0 +1,28 @@
+<div class="card" id="card-publisher">
+    <div class="card-header">
+    </div>
+    <div class="card-body">
+        <div id="new-publication" >
+            <div class="alert alert-success" *ngIf="status == 'success'">
+                Publication sent correctly
+            </div>
+            <div class="alert alert-danger" *ngIf="status == 'error'">
+                Publication NOT sent correctly
+            </div> 
+            <form #newPubForm="ngForm" (ngSubmit)="onSubmit(newPubForm, $event);" class="col-lg-12">
+                <p>
+                    <label>Que estas pensando?</label>
+                    <input name="text" #text="ngModel" [(ngModel)]="publication.text" class="form-control" required />
+                    <span *ngIf="!text.valid && text.touched">
+                        el Texto de la publicacion es obligatorio
+                    </span>
+                </p>
+                <p class="row">
+                    <input type="file" placeholder="Upload Image" (change)="fileChangeEvent($event)"/>
+                    <input type="submit" value="Send" class="btn btn-success btn-sm ml-auto" [disabled]="!newPubForm.form.valid" />
+                </p>
+        
+            </form>
+        </div>
+    </div>
+</div>

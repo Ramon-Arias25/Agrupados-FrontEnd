@@ -6,7 +6,7 @@
     <div>
         <div class="name-surname">
             <a [routerLink]="['/profile',identity._id]" class="aprofile">
-                <h1  class="h1-strong">{{identity.nick}}</h1>
+                <h1>{{identity.nick}}</h1> 
             </a>
             <a [routerLink]="['/profile',identity._id]" class="username">
                 {{identity.name + ' ' + identity.surname}}
@@ -32,9 +32,9 @@
                 <div class="col-lg-4 stats">
                     <div class="following-data">
                         <a [routerLink]="['/follower', identity._id,1]">
-                            <span class="label-stats">
+                            <label class="label-stats">
                                 Seguidores
-                            </span>
+                            </label>
                             <span class="number-stats">
                                 {{ stats.followed }}
                             </span>
@@ -44,9 +44,9 @@
                 <div class="col-lg-4 stats">
                     <div class="following-data">
                         <a href="#">
-                            <span class="label-stats">
+                            <h6 class="label-stats">
                                 Publicaciones
-                            </span>
+                            </h6>
                             <span class="number-stats">
                                 {{ stats.publication }}
                             </span>
